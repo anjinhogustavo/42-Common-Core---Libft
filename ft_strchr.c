@@ -27,12 +27,22 @@ char	*ft_strchr(const char *s, int c)
 	return (0);
 }
 /*
-int	main()
+int main()
 {
-	char	str[] = "corinthians";
-	int	i;
+	const char *string = "Hello, world!";
+	int character = 'o';
+	char *result = ft_strchr(string, character);
 
-	i = 'a';
-	printf("%s", ft_strchr (str, i));
+	if (result != NULL)
+	{
+		printf("O caractere '%c' foi encontrado na posição: %ld\n", character, result - string);
+	}
+	else
+	{
+		printf("O caractere '%c' não foi encontrado na string.\n", character);
+	}
+	return (0);
 }
 */
+
+

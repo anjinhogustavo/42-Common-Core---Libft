@@ -83,7 +83,7 @@ char	**ft_split(char const *s, char c)
 	array[i] = NULL;
 	return (array);
 }
-
+/*
 int main()
 {
 	char const *str = ";;;;string;;;;;dividida;por;virgula;;;;;";
@@ -100,3 +100,4 @@ int main()
 	free(result);
 	return (0);
 }
+*/

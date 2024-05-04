@@ -29,17 +29,17 @@ char	*ft_strtrim(char const *s1, char const *set)
 		j--;
 		str = (char *)malloc(sizeof(char) * (j - i + 1));
 		if (str)
-		ft_strlcpy(str, &s1[i], j - i + 1);
+			ft_strlcpy(str, &s1[i], j - i + 1);
 		if (!str)
-		return (NULL);
+			return (NULL);
 	}
 	return (str);
 }
 /*
 int main()
 {
-	char *s1 = "   Hello, world   ";
-	char *set = " ";
+	char *s1 = "aaaHello, worldaaa";
+	char *set = "a";
 
 	char *trimmed_str = ft_strtrim(s1, set);
 	printf ("String original: '%s'\n", s1);

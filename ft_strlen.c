@@ -6,7 +6,7 @@
 /*   By: ganjinho <ganjinho@student.42.fr>          #+#  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024-04-25 11:13:59 by ganjinho          #+#    #+#             */
-/*   Updated: 2024-04-25 11:13:59 by ganjinho         ###   ########.fr       */
+/*   Updated: 2024/05/06 14:02:11 by ganjinho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,3 +23,9 @@ size_t	ft_strlen(const char *str)
 	}
 	return (count);
 }
+/*
+int	main(void)
+{
+	return (0);
+}
+*/

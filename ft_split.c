@@ -17,11 +17,11 @@ static int	ft_countwords(char const *str, char c)
 	unsigned int	i;
 	unsigned int	counter;
 
-	i	= 0;
-	counter	= 0;
+	i = 0;
+	counter = 0;
 	while (str[i] != '\0')
 	{
-		if(str[i] != c) //verifica se nao e delimitador
+		if (str[i] != c)
 		{
 			counter++;
 			while (str[i] != c && str[i] != '\0')
@@ -29,22 +29,22 @@ static int	ft_countwords(char const *str, char c)
 				i++;
 			}
 		}
-		else //Se for delimitador so avanca
-		i++;
+		else
+			i++;
 	}
-	return(counter);
+	return (counter);
 }
 
-static char	*ft_strndup (const char *s, size_t len)
+static char	*ft_strndup(const char *s, size_t len)
 {
 	char	*cpy;
 	size_t	i;
 
 	i = 0;
 	cpy = malloc(sizeof(char) * (len + 1));
-	if(cpy == NULL)
-	return (NULL);
-	while(i < len)
+	if (cpy == NULL)
+		return (NULL);
+	while (i < len)
 	{
 		cpy[i] = s[i];
 		i++;
@@ -63,19 +63,17 @@ char	**ft_split(char const *s, char c)
 
 	funcwords = ft_countwords(s, c);
 	array = malloc(sizeof(char *) * (funcwords + 1));
-	if(!s || !(array))
-	return (NULL);
-
+	if (!s || !(array))
+		return (NULL);
 	i = 0;
 	d = 0;
-
 	while (i < funcwords)
 	{
-		while(s[d] == c)
-		d++;
+		while (s[d] == c)
+			d++;
 		words = 0;
-		while(s[d + words] != '\0' && s[d + words] != c)
-		words++;
+		while (s[d + words] != '\0' && s[d + words] != c)
+			words++;
 		array[i] = ft_strndup(&s[d], words);
 		d = d + words;
 		i++;
@@ -94,10 +92,10 @@ int main()
 	while (result[i] != NULL)
 	{
 		printf("%s\n", result[i]);
-		free(result[i]);
+		//free(result[i]);
 		i++;
 	}
-	free(result);
+	//free(result);
 	return (0);
 }
 */

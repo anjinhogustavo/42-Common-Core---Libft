@@ -24,9 +24,9 @@ char	*ft_strtrim(char const *s1, char const *set)
 		i = 0;
 		j = ft_strlen(s1);
 		while (s1[i] && ft_strchr(set, s1[i]))
-		i++;
+			i++;
 		while (s1[i] && ft_strchr(set, s1[j - 1]))
-		j--;
+			j--;
 		str = (char *)malloc(sizeof(char) * (j - i + 1));
 		if (str)
 			ft_strlcpy(str, &s1[i], j - i + 1);
@@ -38,8 +38,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 /*
 int main()
 {
-	char *s1 = "aaaHello, worldaaa";
-	char *set = "a";
+	char *s1 = "aaaHello,aaaaaaaa worldaaaa";
+	char *set = "aaaa";
 
 	char *trimmed_str = ft_strtrim(s1, set);
 	printf ("String original: '%s'\n", s1);

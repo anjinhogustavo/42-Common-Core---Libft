@@ -16,13 +16,12 @@ static unsigned int	ft_len_numbers(int nbr)
 {
 	unsigned int	len;
 
-	len = 1;
+	len = 0;
 	if (nbr == 0)
 		return (1);
-	/*if (nbr < 0)
+	if (nbr < 0)
 		len += 1;
-	*/
-	while(nbr != 0)
+	while (nbr != 0)
 	{
 		nbr = nbr / 10;
 		len++;
@@ -32,14 +31,14 @@ static unsigned int	ft_len_numbers(int nbr)
 
 char	*ft_itoa(int n)
 {
-	char	*str;
+	char			*str;
 	unsigned int	len;
 	unsigned int	nbr;
 
 	len = ft_len_numbers(n);
 	str = (char *)malloc(sizeof(char) * (len + 1));
 	if (str == NULL)
-		return(NULL);
+		return (NULL);
 	if (n < 0)
 	{
 		str[0] = '-';
@@ -47,16 +46,16 @@ char	*ft_itoa(int n)
 	}
 	else
 		nbr = n;
-	if(nbr == 0)
+	if (nbr == 0)
 		str[0] = '0';
 	str[len] = '\0';
-	while(nbr != 0)
+	while (nbr != 0)
 	{
 		str[len - 1] = (nbr % 10) + '0';
 		nbr = nbr / 10;
 		len--;
 	}
-	return(str);
+	return (str);
 }
 /*
 int	main()

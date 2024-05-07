@@ -18,10 +18,14 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	char	*new;
 
 	i = 0;
+	if (*s == '\0' || start >= ft_strlen(s))
+		return (ft_strdup(""));
+	if (len > ft_strlen(s + start))
+		len = ft_strlen(s + start);
 	new = ((char *)malloc(sizeof(char) * (len + 1)));
 	if (! new)
 		return (NULL);
-	while (i < len && s[start + i] != '\0')
+	while (i < len)
 	{
 		new[i] = s[start];
 		i++;
@@ -33,10 +37,10 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 /*
 int	main()
 {
-	char	*str = "teste para string";
+	char	*str = " ";
 	char	*sub;
 
-	sub = ft_substr(str,5,7);
+	sub = ft_substr(str,2,2);
 	printf("Original string:%s\n", str);
 	printf("Substring:%s", sub);
 	free(sub);

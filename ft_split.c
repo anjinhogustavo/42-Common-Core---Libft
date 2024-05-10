@@ -53,21 +53,28 @@ static char	*ft_strndup(const char *s, size_t len)
 	return (cpy);
 }
 
-char	**ft_split(char const *s, char c)
+static void	ft_free(char **array)
+{
+	size_t	i;
+
+	i = 0;
+	while (array[i])
+	{
+		free(array[i]);
+		i++;
+	}
+	free(array);
+}
+
+char	**ft_fill(char const *s, char **array, char c)
 {
 	size_t	i;
 	size_t	d;
-	size_t	funcwords;
 	size_t	words;
-	char	**array;
 
-	funcwords = ft_countwords(s, c);
-	array = malloc(sizeof(char *) * (funcwords + 1));
-	if (!s || !(array))
-		return (NULL);
 	i = 0;
 	d = 0;
-	while (i < funcwords)
+	while (i < (size_t)ft_countwords(s, c))
 	{
 		while (s[d] == c)
 			d++;
@@ -75,10 +82,33 @@ char	**ft_split(char const *s, char c)
 		while (s[d + words] != '\0' && s[d + words] != c)
 			words++;
 		array[i] = ft_strndup(&s[d], words);
+		if (!array[i])
+		{
+			ft_free(array);
+			return (NULL);
+		}
 		d = d + words;
 		i++;
 	}
 	array[i] = NULL;
+	return (array);
+}
+
+char	**ft_split(char const *s, char c)
+{
+	size_t	funcwords;
+	char	**array;
+
+	funcwords = ft_countwords(s, c);
+	array = malloc(sizeof(char *) * (funcwords + 1));
+	if (!s || !(array))
+		return (NULL);
+	array = ft_fill(s, array, c);
+	if (!array)
+	{
+		free(array);
+		return (NULL);
+	}
 	return (array);
 }
 /*

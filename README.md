@@ -43,7 +43,7 @@
 
 <br>
 
-# 📚 Great Resources for Ft_Printf
+# 📚 Great Resources for Libft
 
 [42-Gitbook](https://42-cursus.gitbook.io/guide)
 
@@ -77,7 +77,7 @@ The Libft is written in C language and thus needs the **`gcc` compiler** to run.
 ├── Makefile               # Makefile to compile the project easily
 └── README.md              # Project description
 ```
-**2. Compiling the Ft_Printf**
+**2. Compiling the Libft**
 
 To compile the function:
 

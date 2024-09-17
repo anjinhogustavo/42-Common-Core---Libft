@@ -7,7 +7,7 @@
 </p>
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/3be57328-f678-4b26-b7c3-f8b35579bc52" alt="ft_printf">
+  <img src="https://miro.medium.com/v2/resize:fit:1400/1*8lw6KktyFOL3wSCdZSRdsw.jpeg" alt="Libft">
 </p>
 
 <h3 align="center">
@@ -39,7 +39,8 @@
 
 ## 📝 About 
 
-> This project consists of recreating the well-known printf function from the C standard library, libc. The ft_printf function allows formatted output to the standard output stream or other file descriptors. You will handle various format specifiers such as %d, %s, %x, and more, mimicking the behavior of the original function while deepening your understanding of variadic functions, buffers, and type handling in C.
+> This project involves creating a custom C library, libft, by re-implementing a set of standard C library functions. The libft library includes functions for string manipulation, memory management, linked lists, and other essential utilities. By developing your own versions of functions like strlen, strcpy, memset, malloc, and more, you'll deepen your understanding of C programming, pointers, and memory allocation, while creating a reusable library that can be integrated into future projects.
+
 <br>
 
 # 📚 Great Resources for Ft_Printf
@@ -52,9 +53,7 @@
 
 # 🎥 Videos 
 
-[Oceano - Ft_Printf](https://www.youtube.com/watch?v=byRw36Y3Hjs&t=945s&pp=ygUVZnRfcHJpbnRmIHR1dG9yaWFsIDQy)
-
-[CodeVault - Va_list](https://www.youtube.com/watch?v=oDC208zvsdg&pp=ygUadmFyaWFkaWMgc3RhdGljYSBleHBsYWluZWQ%3D)
+[Oceano - Libft Linked List](https://www.youtube.com/watch?v=mkZYMKwKkvI&t=267s&pp=ugMICgJwdBABGAHKBQlsaWJmdCAgNDI%3D)
 
 
 
@@ -72,9 +71,9 @@ The Libft is written in C language and thus needs the **`gcc` compiler** to run.
 
 **1. Project Structure**
 ```
-├── ft_printf.c            # Main function that handles formatted output
-├── ft_printf.h            # Header file with function prototypes and macros
-├── ft_printf_utils.c      # Utility functions (e.g., string manipulation, number conversions)
+├── libft.c                # Core library functions (e.g., string manipulation, memory functions)
+├── libft.h                # Header file with function prototypes and macros
+├── libft_utils.c          # Utility functions (e.g., helper functions for libft)
 ├── Makefile               # Makefile to compile the project easily
 └── README.md              # Project description
 ```
@@ -83,7 +82,8 @@ The Libft is written in C language and thus needs the **`gcc` compiler** to run.
 To compile the function:
 
 ```shell
-$ cd path/to/libft cc -Wall -Wextra -Werror *.c
+$ cd path/to/libft
+$ cc -Wall -Wextra -Werror *.c
 ```
 
 ```C
@@ -92,7 +92,7 @@ $ cd path/to/libft cc -Wall -Wextra -Werror *.c
 
 **3. Running Tests**
 ```
-$ gcc -Wall -Wextra -Werror main.c libftprintf.a
+$ gcc -Wall -Wextra -Werror main.c libft.a
 $ ./a.out
 ```
 
